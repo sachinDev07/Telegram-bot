@@ -73,6 +73,14 @@ bot.command("binarysearchjs", async (ctx) => {
     ctx.reply(response.data);
 })
 
+bot.command("store", async (ctx) => {
+    const response = await axios.get('https://fakestoreapi.com/products/1');
+    ctx.reply(response.data.title);
+    ctx.reply(response.data.image);
+    ctx.reply(response.data.description);
+  });
+  
+
 bot.hears("i love you", (ctx) => ctx.reply("love you too bro 😘"));
 
 bot.on("text", (ctx) => ctx.reply("I don't understand humans"));
